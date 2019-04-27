@@ -1,16 +1,16 @@
 # Services
-Bitcore Node has a service module system that can start up additional services that can include additional:
+Bellcore Node has a service module system that can start up additional services that can include additional:
 - Blockchain indexes (e.g. querying balances for addresses)
 - API methods
 - HTTP routes
 - Event types to publish and subscribe
 
-The `bitcore-node.json` file describes which services will load for a node:
+The `bellcore-node.json` file describes which services will load for a node:
 
 ```json
 {
   "services": [
-    "bitcoind", "web"
+    "bellcoind", "web"
   ]
 }
 ```
@@ -20,21 +20,21 @@ Services correspond with a Node.js module as described in 'package.json', for ex
 ```json
 {
   "dependencies": {
-    "bitcore-lib": "^0.13.7",
-    "bitcore-node": "^0.2.0",
-    "insight-api": "^3.0.0"
+    "bellcore-lib": "git://github.com/bellcoin-electrum/bellcore-lib",
+    "bellcore-node": "git://github.com/bellcoin-electrum/bellcore-node",
+    "insight-api-bellcoin": "git://github.com/bellcoin-electrum/insight-api-bellcoin"
   }
 }
 ```
 
-_Note:_ If you already have a bitcore-node database, and you want to query data from previous blocks in the blockchain, you will need to reindex. Reindexing right now means deleting your bitcore-node database and resyncing.
+_Note:_ If you already have a bellore-node database, and you want to query data from previous blocks in the blockchain, you will need to reindex. Reindexing right now means deleting your bellcore-node database and resyncing.
 
 ## Using Services Programmatically
 If, instead, you would like to run a custom node, you can include services by including them in your configuration object when initializing a new node.
 
 ```js
-//Require bitcore
-var bitcore = require('bitcore-node');
+//Require bellcore
+var bitcore = require('bellcore-node');
 
 //Services
 var Bitcoin = bitcore.services.Bitcoin;
@@ -44,12 +44,12 @@ var myNode = new bitcore.Node({
   network: 'regtest'
   services: [
     {
-      name: 'bitcoind',
-      module: Bitcoin,
+      name: 'bellcoind',
+      module: Bellcoin,
       config: {
         spawn: {
-          datadir: '/home/<username>/.bitcoin',
-          exec: '/home/<username>/bitcore-node/bin/bitcoind'
+          datadir: '/home/<username>/.bellcoin',
+          exec: '/home/<username>/bellcore-node/bin/bellcoind'
         }
       }
     },

@@ -6,7 +6,7 @@ var path = require('path');
 var EventEmitter = require('events').EventEmitter;
 var should = require('chai').should();
 var crypto = require('crypto');
-var bitcore = require('bitcore-lib');
+var bitcore = require('bellcore-lib');
 var _ = bitcore.deps._;
 var sinon = require('sinon');
 var proxyquire = require('proxyquire');
@@ -19,7 +19,7 @@ var errors = index.errors;
 
 var Transaction = bitcore.Transaction;
 var readFileSync = sinon.stub().returns(fs.readFileSync(path.resolve(__dirname, '../data/bitcoin.conf')));
-var BitcoinService = proxyquire('../../lib/services/bitcoind', {
+var BitcoinService = proxyquire('../../lib/services/bellcoind', {
   fs: {
     readFileSync: readFileSync
   }

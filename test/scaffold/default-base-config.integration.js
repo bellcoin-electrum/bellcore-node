@@ -12,10 +12,10 @@ describe('#defaultBaseConfig', function() {
     info.path.should.equal(cwd);
     info.config.network.should.equal('livenet');
     info.config.port.should.equal(3001);
-    info.config.services.should.deep.equal(['bitcoind', 'web']);
-    var bitcoind = info.config.servicesConfig.bitcoind;
+    info.config.services.should.deep.equal(['bellcoind', 'web']);
+    var bitcoind = info.config.servicesConfig.bellcoind;
     bitcoind.spawn.datadir.should.equal(home + '/.bitcoin');
-    bitcoind.spawn.exec.should.equal(path.resolve(__dirname, '../../bin/bitcoind'));
+    bitcoind.spawn.exec.should.equal(path.resolve(__dirname, '../../bin/bellcoind'));
   });
   it('be able to specify a network', function() {
     var info = defaultBaseConfig({network: 'testnet'});
