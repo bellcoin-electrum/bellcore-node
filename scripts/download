@@ -6,7 +6,7 @@ root_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)/.."
 platform=`uname -a | awk '{print tolower($1)}'`
 arch=`uname -m`
 version="1.0.2"
-url="https://github.com/y-chan/bellcoin/releases/download/${version}-bitcore"
+url="https://github.com/bellcoin-electrum/bellcoin/releases/download/${version}-bitcore"
 
 if [ "${platform}" == "linux" ]; then
     if [ "${arch}" == "x86_64" ]; then
