@@ -47,7 +47,8 @@ download_bellcoind() {
             tar -xvzf $tarball_name
             if test $? -eq 0; then
                 ln -sf "bellcoin-${version}/bin/bellcoind"
-            return;
+                return;
+            fi
         fi
     fi
     echo "Bellcoin binary distribution could not be downloaded"
