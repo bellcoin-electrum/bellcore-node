@@ -46,6 +46,7 @@
     "async": "^1.3.0",
     "bellcoind-rpc": "git://github.com/bellcoin-electrum/bellcoind-rpc.git",
     "bellcore-lib": "git://github.com/bellcoin-electrum/bellcore-lib.git",
+    "bellcoin-yespower": "git://github.com/bellcoin-electrum/node-bellcoin-yespower.git",
     "body-parser": "^1.13.3",
     "colors": "^1.1.2",
     "commander": "^2.8.1",
