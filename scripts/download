@@ -12,7 +12,7 @@ if [ "${platform}" == "linux" ]; then
     if [ "${arch}" == "x86_64" ]; then
         tarball_name="bellcoin-${version}-x86_64-linux-gnu.tar.gz"
     else
-        echo "VIPSTARCOIN binary distribution not available for platform and architecture"
+        echo "Bellcoin binary distribution not available for platform and architecture"
         exit -1
     fi
 else
@@ -22,7 +22,7 @@ fi
 
 binary_url="${url}/${tarball_name}"
 
-download_bitcoind() {
+download_bellcoind() {
 
     cd "${root_dir}/bin"
 
@@ -45,6 +45,8 @@ download_bitcoind() {
         if test -e "${tarball_name}"; then
             echo "Unpacking bellcoin distribution"
             tar -xvzf $tarball_name
+            if test $? -eq 0; then
+                ln -sf "bellcoin-${version}/bin/bellcoind"
             return;
         fi
     fi
@@ -63,7 +65,7 @@ while [ -n "$1" ]; do
   value="$2"
 
   case $param in
-    --skip-bitcoin-download)
+    --skip-bellcoin-download)
           download=0
           ;;
   esac
@@ -71,7 +73,7 @@ while [ -n "$1" ]; do
 done
 
 if [ "${download}" = 1 ]; then
-    download_bitcoind
+    download_bellcoind
 fi
 
 exit 0
