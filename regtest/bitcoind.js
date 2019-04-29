@@ -461,4 +461,25 @@ describe('Bellcoind Functionality', function() {
     });
   });
 
+  describe('#getInfo', function() {
+    it('will get information', function(done) {
+      bitcoind.getInfo(function(err, info) {
+        if (err) {
+          return done(err);
+        }
+        info.network.should.equal('regtest');
+        should.exist(info);
+        should.exist(info.version);
+        should.exist(info.blocks);
+        should.exist(info.timeOffset);
+        should.exist(info.connections);
+        should.exist(info.difficulty);
+        should.exist(info.testnet);
+        should.exist(info.relayFee);
+        should.exist(info.errors);
+        done();
+      });
+    });
+  });
+
 });
