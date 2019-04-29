@@ -45,7 +45,7 @@
   "dependencies": {
     "async": "^1.3.0",
     "bellcoind-rpc": "0.6.0",
-    "bellcore-lib": "0.14.0",
+    "bellcore-lib": "0.16.0",
     "bellcoin-yespower": "1.0.0",
     "body-parser": "^1.13.3",
     "colors": "^1.1.2",
