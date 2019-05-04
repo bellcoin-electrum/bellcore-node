@@ -46,7 +46,7 @@
     "@y-chan/coininfo": "*",
     "async": "^1.3.0",
     "bellcoind-rpc": "0.6.0",
-    "bellcore-lib": "0.16.1",
+    "bellcore-lib": "0.16.2",
     "body-parser": "^1.13.3",
     "colors": "^1.1.2",
     "commander": "^2.8.1",
